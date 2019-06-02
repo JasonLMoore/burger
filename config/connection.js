@@ -1,4 +1,3 @@
-//init commit//
 const mysql = require("mysql");
 
 const connection = mysql.createConnection({
@@ -15,6 +14,7 @@ connection.connect(function(err) {
     return;
   }
   console.log("connected as id " + connection.threadId);
+  console.log("connected to database " + connection.database);
 });
 
 module.exports = connection;

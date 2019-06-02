@@ -1,4 +1,3 @@
-//init commit//
 const connection = require("../config/connection.js");
 
 //function to create arr of question marks//
