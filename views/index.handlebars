@@ -1,1 +1,43 @@
-{{!-- {{commented expressions}} --}}
+{{!-- {{for simplicity of learning, activity 17(CATS) was used as a base for this site}} --}}
+<h1>Eat Da Burger!</h1>
+
+<h2>Burgers on the table.</h2>
+
+<ul>
+  {{#each burgers}}
+  {{#unless devoured}}
+  {{devoured=false}}
+  {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Burgers in the belly.</h2>
+
+<ul>
+  {{#each burgers}}
+  {{#if devoured}}
+  {{devoured=true}}
+  {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Make a burger!</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="newBurg">Burger Name:</label>
+    <input type="text" id="newBurg" name="name">
+  </div>
+
+  <button type="submit">Order Up!</button>
+</form>
+
+<li>
+	{{name}}
+
+	<button class="change-devoured" data-id="{{id}}" data-newdevour="{{devoured}}">
+		{{#if devoured}}MORE! MORE!{{else}}OM NOM NOM!!!{{/if}}
+	</button>
+
+	<button class="delete-burger" data-id="{{this.id}}">NO MORE!</button>
+</li>
