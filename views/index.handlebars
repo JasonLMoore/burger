@@ -2,10 +2,12 @@
 <h1>Eat Da Burger!</h1>
 
 <h2>Burgers on the table.</h2>
-
 <ul>
   {{#each burgers}}
     {{#unless devoured}}
+    <li>
+      {{burger_name}}
+    </li>
     {{/unless}}
   {{/each}}
 </ul>
@@ -15,6 +17,9 @@
 <ul>
   {{#each burgers}}
     {{#if devoured}}
+    <li>
+      {{burger_name}}
+    </li>
     {{/if}}
   {{/each}}
 </ul>

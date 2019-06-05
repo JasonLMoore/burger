@@ -8,11 +8,11 @@ const burger = require("../models/burger.js");
 //read all burgers//
 router.get("/", function (req, res) {
   burger.all(function (data) {
-    let indexObject = {
-      burgers: data
-    };
-    console.log("index object " + indexObject);
-    res.render("index", indexObject);
+    //let indexObject = {
+      //burgers: data
+    //};
+    console.log("index object " + JSON.stringify(data, null, 2));
+    res.render("index", {burgers: data});
   });
 });
 
